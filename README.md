@@ -24,7 +24,7 @@
 
 - 基于 [@v2fly/domain-list-community/data](https://github.com/v2fly/domain-list-community/tree/master/data) 数据，通过仓库 [@Loyalsoldier/domain-list-custom](https://github.com/Loyalsoldier/domain-list-custom) 生成
 - **加入大量中国大陆域名、Apple 域名和 Google 域名**：
-  - [@felixonmars/dnsmasq-china-list/accelerated-domains.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/accelerated-domains.china.conf) 加入到 `geosite:china-list` 和 `geosite:cn` 类别中
+  - [@felixonmars/dnsmasq-china-list/accelerated-domains.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/accelerated-domains.china.conf) 加入到 `geosite:cn` 类别中
   - [@felixonmars/dnsmasq-china-list/apple.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/apple.china.conf) 加入到 `geosite:geolocation-!cn` 类别中（如希望本文件中的 Apple 域名直连，请参考下面 [geosite 的 Routing 配置方式](https://github.com/Loyalsoldier/v2ray-rules-dat#geositedat-1)）
   - [@felixonmars/dnsmasq-china-list/google.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/google.china.conf) 加入到 `geosite:geolocation-!cn` 类别中（如希望本文件中的 Google 域名直连，请参考下面 [geosite 的 Routing 配置方式](https://github.com/Loyalsoldier/v2ray-rules-dat#geositedat-1)）
 - **加入 AdGuard DNS Filter 广告域名**：通过 [@AdGuard/DNS-filter](https://kb.adguard.com/en/general/adguard-ad-filters#dns-filter) 获取并加入到 `geosite:category-ads-all` 类别中
@@ -47,8 +47,6 @@
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/proxy-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/proxy-list.txt)
 - **广告域名列表 reject-list.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/reject-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/reject-list.txt)
-- **@felixonmars/dnsmasq-china-list 仓库收集的在中国大陆可直连的域名列表 china-list.txt**：
-  - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/china-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/china-list.txt)
 - **Apple 在中国大陆可直连的域名列表 apple-cn.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/apple-cn.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/apple-cn.txt)
 - **Google 在中国大陆可直连的域名列表 google-cn.txt**：
@@ -57,27 +55,11 @@
 ### geosite.dat
 
 跟 V2Ray 官方 `geosite.dat` 配置方式相同。相比官方 `geosite.dat` 文件，本项目特有的类别：
-
-- `geosite:china-list`：包含 [@felixonmars/dnsmasq-china-list/accelerated-domains.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/accelerated-domains.china.conf) 文件里的域名，供有特殊 DNS 分流需求的用户使用。
 - `geosite:apple-cn`：包含 [@felixonmars/dnsmasq-china-list/apple.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/apple.china.conf) 文件里的域名，供希望 Apple 域名直连（不走代理）的用户使用。
 - `geosite:google-cn`：包含 [@felixonmars/dnsmasq-china-list/google.china.conf](https://github.com/felixonmars/dnsmasq-china-list/blob/master/google.china.conf) 文件里的域名，供希望 Google 域名直连（不走代理）的用户使用。
+- `geosite:category-games@cn` 包含[category-games](https://github.com/v2fly/domain-list-community/blob/master/data/category-games) `steam`、`ea`、`blizzard`、`epicgames` 和 `nintendo` 等常见的游戏厂商。设置类别 `geosite:category-games@cn` 为直连，即可节省大量服务器流量。
 
 > ⚠️ 注意：在 Routing 配置中，类别越靠前（上），优先级越高，所以 `geosite:apple-cn` 和 `geosite:google-cn` 要放置在 `geosite:geolocation-!cn` 前（上）面才能生效。
-
-#### 高级用法
-
-v2fly/domain-list-community 项目 [data](https://github.com/v2fly/domain-list-community/tree/master/data) 目录中某些列表里的规则会被标记诸如 `@cn` 的 attribute（如下所示），意为该域名在中国大陆有接入点，可直连。
-
-```
-steampowered.com.8686c.com @cn
-steamstatic.com.8686c.com @cn
-```
-
-对于玩 Steam 国区游戏，想要直连的用户，可以设置类别 `geosite:steam@cn` 为直连，意为将 [steam](https://github.com/v2fly/domain-list-community/blob/master/data/steam) 列表内所有被标记了 `@cn` attribute 的规则（域名）设置为直连。同理，由于 [category-games](https://github.com/v2fly/domain-list-community/blob/master/data/category-games) 列表包含了 `steam`、`ea`、`blizzard`、`epicgames` 和 `nintendo` 等常见的游戏厂商。设置类别 `geosite:category-games@cn` 为直连，即可节省大量服务器流量。
-
-> ⚠️ 注意：在 Routing 配置中，类别越靠前（上），优先级越高，所以 `geosite:category-games@cn` 等所有带有 `@cn` attribute 的规则都要放置在 `geosite:geolocation-!cn` 前（上）面才能生效。
-> 
-> `category-games` 列表内的规则（域名）可能会有疏漏，请留意规则命中情况。如发现遗漏，欢迎到项目 v2fly/domain-list-community 提 [issue](https://github.com/v2fly/domain-list-community/issues) 反馈。
 
 ## 致谢
 
@@ -85,10 +67,5 @@ steamstatic.com.8686c.com @cn
 - [@v2fly/domain-list-community](https://github.com/v2fly/domain-list-community)
 - [@Loyalsoldier/domain-list-custom](https://github.com/Loyalsoldier/domain-list-custom)
 - [@felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)
-- [@gfwlist/gfwlist](https://github.com/gfwlist/gfwlist)
-- [@cokebar/gfwlist2dnsmasq](https://github.com/cokebar/gfwlist2dnsmasq)
 - [@AdblockPlus/EasylistChina+Easylist.txt](https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt)
 - [@AdGuard/DNS-filter](https://kb.adguard.com/en/general/adguard-ad-filters#dns-filter)
-- [@PeterLowe/adservers](https://pgl.yoyo.org/adservers)
-- [@DanPollock/hosts](https://someonewhocares.org/hosts)
-- [@crazy-max/WindowsSpyBlocker](https://github.com/crazy-max/WindowsSpyBlocker)
