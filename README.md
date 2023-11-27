@@ -39,28 +39,20 @@
 
 - **geoip.dat**：
   - [https://github.com/DotWho/v2ray-rules-dat/releases/latest/download/geoip.dat](https://github.com/DotWho/v2ray-rules-dat/releases/latest/download/geoip.dat)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/geoip.dat](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/geoip.dat)
 - **geosite.dat**：
   - [https://github.com/DotWho/v2ray-rules-dat/releases/latest/download/geosite.dat](https://github.com/DotWho/v2ray-rules-dat/releases/latest/download/geosite.dat)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/geosite.dat](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/geosite.dat)
 - **直连域名列表 direct-list.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/direct-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/direct-list.txt)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/direct-list.txt](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/direct-list.txt)
 - **代理域名列表 proxy-list.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/proxy-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/proxy-list.txt)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/proxy-list.txt](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/proxy-list.txt)
 - **广告域名列表 reject-list.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/reject-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/reject-list.txt)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/reject-list.txt](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/reject-list.txt)
 - **@felixonmars/dnsmasq-china-list 仓库收集的在中国大陆可直连的域名列表 china-list.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/china-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/china-list.txt)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/china-list.txt](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/china-list.txt)
 - **Apple 在中国大陆可直连的域名列表 apple-cn.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/apple-cn.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/apple-cn.txt)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/apple-cn.txt](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/apple-cn.txt)
 - **Google 在中国大陆可直连的域名列表 google-cn.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/google-cn.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/google-cn.txt)
-  - [https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/google-cn.txt](https://cdn.jsdelivr.net/gh/DotWho/v2ray-rules-dat@release/google-cn.txt)
 
 ### geosite.dat
 
