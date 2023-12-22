@@ -41,7 +41,7 @@
 - **geoip.dat**：
   - [https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat)
 - **geosite.dat**：
-  - [https://github.com/DotWho/v2ray-rules-dat/releases/latest/download/geosite.dat](https://github.com/DotWho/v2ray-rules-dat/releases/latest/download/geosite.dat)
+  - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/geosite.dat](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/geosite.dat)
 - **直连域名列表 direct-list.txt**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/direct-list.txt](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/direct-list.txt)
 - **代理域名列表 proxy-list.txt**：
