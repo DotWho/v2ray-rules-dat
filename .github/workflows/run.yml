@@ -30,11 +30,6 @@ jobs:
         with:
           ref: hidden
 
-      - name: Checkout the "data" branch of this repo
-        uses: actions/checkout@v4
-        with:
-          ref: data
-
       - name: Checkout Loyalsoldier/domain-list-custom
         uses: actions/checkout@v4
         with:
