@@ -21,6 +21,7 @@ jobs:
           echo "APPLE_DOMAINS_URL=https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf" >> $GITHUB_ENV
           echo "ADGUARD_DNS_REJECT_URL=https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt" >> $GITHUB_ENV
           echo "AD_DOMAINS_URL=https://adrules.top/ad-domains.txt" >> $GITHUB_ENV
+          echo "COPILOT_URL=https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/category/copilot" >> $GITHUB_ENV
           echo "CUSTOM_DIRECT=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/cn.txt" >> $GITHUB_ENV
           echo "CUSTOM_PROXY=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/geolocation-!cn.txt" >> $GITHUB_ENV
         shell: bash
@@ -29,11 +30,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: hidden
-
-      - name: Checkout the "category" branch of this repo
-        uses: actions/checkout@v4
-        with:
-          ref: category
 
       - name: Checkout Loyalsoldier/domain-list-custom
         uses: actions/checkout@v4
@@ -150,6 +146,8 @@ jobs:
           curl -sSL $GOOGLE_DOMAINS_URL | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > google-cn.txt
           curl -sSL $APPLE_DOMAINS_URL | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > ./community/data/apple-cn
           curl -sSL $APPLE_DOMAINS_URL | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > apple-cn.txt
+          curl -sSL $COPILOT_URL | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > ./community/data/copilot
+          curl -sSL $COPILOT_URL | perl -ne '/^((full|regexp|keyword):[^:]+)(\n$|:@.+)/ && print "$1\n"' | sort --ignore-case -u > copilot.txt
           # curl -sSL $AD_DOMAINS_URL > ./community/data/adrules
           # curl -sSL $AD_DOMAINS_URL > adrules.txt
 
