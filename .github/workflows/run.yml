@@ -166,6 +166,7 @@ jobs:
           install -p {proxy,direct,reject}-tld-list.txt ./publish/
           install -p {proxy,direct,reject}-list.txt ./publish/
           install -p {apple-cn,google-cn}.txt ./publish/
+          install -p ./community/data/bing ./publish/
           # cd ./publish || exit 1
           # zip rules.zip {proxy,direct,reject}-list.txt geoip.dat geosite.dat
           # sha256sum geosite.dat > geosite.dat.sha256sum
