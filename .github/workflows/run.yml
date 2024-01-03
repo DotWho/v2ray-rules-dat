@@ -168,6 +168,7 @@ jobs:
           install -p {apple-cn,google-cn}.txt ./publish/
           # cd ./publish || exit 1
           zip rules.zip ./community/data/
+          cp rules.zip ./publish/
           # sha256sum geosite.dat > geosite.dat.sha256sum
           # sha256sum rules.zip > rules.zip.sha256sum
 
