@@ -153,6 +153,11 @@ jobs:
           # curl -sSL $AD_DOMAINS_URL > ./community/data/adrules
           # curl -sSL $AD_DOMAINS_URL > adrules.txt
 
+      - name: Zip category files
+        run: |
+          zip rules.zip ./community/data/*
+          cp rules.zip ./publish/
+
       - name: Build geosite.dat file
         run: |
           cd custom || exit 1
@@ -167,8 +172,6 @@ jobs:
           install -p {proxy,direct,reject}-list.txt ./publish/
           install -p {apple-cn,google-cn}.txt ./publish/
           # cd ./publish || exit 1
-          zip rules.zip ./community/data/
-          cp rules.zip ./publish/
           # sha256sum geosite.dat > geosite.dat.sha256sum
           # sha256sum rules.zip > rules.zip.sha256sum
 
