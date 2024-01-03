@@ -168,8 +168,8 @@ jobs:
           install -p {apple-cn,google-cn}.txt ./publish/
           zip rules.zip ./community/data/*
           cp rules.zip ./publish/
-          # cd ./publish || exit 1
-          # sha256sum geosite.dat > geosite.dat.sha256sum
+          cd ./publish || exit 1
+          sha256sum geosite.dat > geosite.dat.sha256sum
           # sha256sum rules.zip > rules.zip.sha256sum
 
       - name: Release and upload assets
