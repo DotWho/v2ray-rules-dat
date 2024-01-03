@@ -156,7 +156,7 @@ jobs:
       - name: Zip category files
         run: |
           zip rules.zip ./community/data/*
-          cp rules.zip ./publish/
+          cp rules.zip ./custom/publish/
 
       - name: Build geosite.dat file
         run: |
