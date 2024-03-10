@@ -6,12 +6,13 @@
 
 ### geoip.dat
 
-- 通过仓库 [@Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 生成
+- 通过仓库 [@DotWho/geoip](https://github.com/DotWho/geoip) 生成
 - 新增类别（方便有特殊需求的用户使用）：
   - `geoip:cloudflare`
   - `geoip:cloudfront`
   - `geoip:facebook`
   - `geoip:fastly`
+  - `geoip:apple`
   - `geoip:google`
   - `geoip:netflix`
   - `geoip:telegram`
@@ -34,11 +35,9 @@
 **下载地址**：
 
 - **geoip-only-cn-private**：
-  - [https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip-only-cn-private.dat](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip-only-cn-private.dat)
+  - [https://raw.githubusercontent.com/DotWho/geoip/release/geoip-only-cn-private.dat](https://raw.githubusercontent.com/DotWho/geoip/release/geoip-only-cn-private.dat)
 - **geoip-asn.dat**：
-  - [https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip-asn.dat](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip-asn.dat)
-- **geoip.dat**：
-  - [https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat)
+  - [https://raw.githubusercontent.com/DotWho/geoip/release/geoip-asn.dat](https://raw.githubusercontent.com/DotWho/geoip/release/geoip-asn.dat)
 - **geosite.dat**：
   - [https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/geosite.dat](https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/release/geosite.dat)
 - **直连域名列表 direct-list.txt**：
