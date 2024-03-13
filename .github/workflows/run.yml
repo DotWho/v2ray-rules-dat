@@ -152,7 +152,8 @@ jobs:
           install -p {proxy,direct,reject}-list.txt ./publish/
           zip rules.zip ./community/data/*
           cp rules.zip ./publish/
-          # cd ./publish || exit 1
+          cd ./publish || exit 1
+          sha256sum geosite.dat > geosite.dat.sha256sum
 
       - name: Release and upload assets
         uses: svenstaro/upload-release-action@v2
