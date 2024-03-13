@@ -166,7 +166,7 @@ jobs:
           # install -Dp ./geoip.dat ./publish/geoip.dat
           # install -Dp ./geoip.dat.sha256sum ./publish/geoip.dat.sha256sum
           install -Dp ./custom/publish/geosite.dat ./publish/geosite.dat
-          install -p {proxy,direct,reject}-tld-list.txt ./publish/
+          # install -p {proxy,direct,reject}-tld-list.txt ./publish/
           install -p {proxy,direct,reject}-list.txt ./publish/
           install -p google-cn.txt ./publish/
           # install -p {apple-cn,google-cn}.txt ./publish/
