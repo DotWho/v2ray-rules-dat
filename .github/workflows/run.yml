@@ -150,7 +150,7 @@ jobs:
           install -Dp ./custom/publish/geosite.dat ./publish/geosite.dat
           install -p {proxy,direct,reject}-tld-list.txt ./publish/
           install -p {proxy,direct,reject}-list.txt ./publish/
-          zip rules.zip ../community/data/*
+          zip rules.zip ./community/data/*
           cp rules.zip ./publish/
           # cd ./publish || exit 1
 
