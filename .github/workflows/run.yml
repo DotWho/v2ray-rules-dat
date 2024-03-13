@@ -147,16 +147,12 @@ jobs:
 
       - name: Move and zip files and generate sha256 hash
         run: |
-          # install -Dp ./geoip.dat ./publish/geoip.dat
-          # install -Dp ./geoip.dat.sha256sum ./publish/geoip.dat.sha256sum
           install -Dp ./custom/publish/geosite.dat ./publish/geosite.dat
           install -p {proxy,direct,reject}-tld-list.txt ./publish/
           install -p {proxy,direct,reject}-list.txt ./publish/
           zip rules.zip ../community/data/*
           cp rules.zip ./publish/
           # cd ./publish || exit 1
-          # sha256sum geosite.dat > geosite.dat.sha256sum
-          # sha256sum rules.zip > rules.zip.sha256sum
 
       - name: Release and upload assets
         uses: svenstaro/upload-release-action@v2
