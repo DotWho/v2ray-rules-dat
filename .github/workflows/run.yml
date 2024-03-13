@@ -22,6 +22,7 @@ jobs:
           # echo "ADGUARD_DNS_REJECT_URL=https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt" >> $GITHUB_ENV
           echo "AD_DOMAINS_URL=https://adrules.top/ad-domains.txt" >> $GITHUB_ENV
           echo "COPILOT_URL=https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/category/copilot" >> $GITHUB_ENV
+          echo "APPLE_PROXY_URL=https://raw.githubusercontent.com/DotWho/v2ray-rules-dat/category/apple-proxy" >> $GITHUB_ENV
           echo "CUSTOM_DIRECT=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/cn.txt" >> $GITHUB_ENV
           echo "CUSTOM_PROXY=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/geolocation-!cn.txt" >> $GITHUB_ENV
         shell: bash
@@ -143,6 +144,7 @@ jobs:
       - name: Add new category to community lists
         run: |
           curl -sSL $COPILOT_URL | sort --ignore-case -u >> ./community/data/bing
+          curl -sSL $APPLE_PROXY_URL | sort --ignore-case -u >> ./community/data/apple-proxy
 
       - name: Create `google-cn`、`apple-cn` lists
         run: |
