@@ -90,11 +90,11 @@ jobs:
           curl -sSL ${CUSTOM_PROXY} | grep -Ev ":@cn" | perl -ne '/^((full|regexp|keyword):[^:]+)(\n$|:@.+)/ && print "$1\n"' | sort --ignore-case -u > proxy-reserve.txt
           curl -sSL $AD_DOMAINS_URL | perl -ne '/^\|\|([-_0-9a-zA-Z]+(\.[-_0-9a-zA-Z]+){1,64})\^$/ && print "$1\n"' | perl -ne 'print if not /^[0-9]{1,3}(\.[0-9]{1,3}){3}$/' | sort --ignore-case -u > reject-reserve.txt
 
-      - name: Add proxy, direct and reject domains from "hidden" branch to appropriate temp files
-        run: |
-          cat proxy.txt >> temp-proxy.txt
-          cat direct.txt >> temp-direct.txt
-          cat reject.txt >> temp-reject.txt
+      # - name: Add proxy, direct and reject domains from "hidden" branch to appropriate temp files
+      #   run: |
+      #     cat proxy.txt >> temp-proxy.txt
+      #     cat direct.txt >> temp-direct.txt
+      #     cat reject.txt >> temp-reject.txt
 
       - name: Sort and generate redundant lists
         run: |
