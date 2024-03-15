@@ -73,8 +73,8 @@ jobs:
 
       - name: Add new category to community lists
         run: |
-          curl -sSL $COPILOT_URL | sort --ignore-case -u > ./community/data/copilot
-          curl -sSL $APPLE_PROXY_URL | sort --ignore-case -u > ./community/data/apple-proxy
+          curl -sSL $COPILOT_URL > ./community/data/copilot
+          curl -sSL $APPLE_PROXY_URL > ./community/data/apple-proxy
           echo "include:copilot" >> ./community/data/bing
 
       - name: Build geosite.dat file
