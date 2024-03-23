@@ -16,11 +16,11 @@ jobs:
         run: |
           echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
           echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-          echo "AD_DOMAINS_URL=https://bitbucket.org/dotwho/rule/raw/master/category/category-ads-all" >> $GITHUB_ENV
-          echo "COPILOT_URL=https://bitbucket.org/dotwho/rule/raw/master/category/copilot" >> $GITHUB_ENV
-          echo "APPLE_PROXY_URL=https://bitbucket.org/dotwho/rule/raw/master/category/apple-proxy" >> $GITHUB_ENV
-          echo "GAME_DOWNLOAD_URL=https://bitbucket.org/dotwho/rule/raw/master/category/game-download" >> $GITHUB_ENV
-          echo "GLOBAL_PROXY=https://bitbucket.org/dotwho/rule/raw/master/category/geolocation-!cn" >> $GITHUB_ENV
+          echo "AD_DOMAINS_URL=https://bitbucket.org/dotwho/rule/raw/release/category/category-ads-all" >> $GITHUB_ENV
+          echo "COPILOT_URL=https://bitbucket.org/dotwho/rule/raw/release/category/copilot" >> $GITHUB_ENV
+          echo "APPLE_PROXY_URL=https://bitbucket.org/dotwho/rule/raw/release/category/apple-proxy" >> $GITHUB_ENV
+          echo "GAME_DOWNLOAD_URL=https://bitbucket.org/dotwho/rule/raw/release/category/game-download" >> $GITHUB_ENV
+          echo "GLOBAL_PROXY=https://bitbucket.org/dotwho/rule/raw/release/category/geolocation-!cn" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout Loyalsoldier/domain-list-custom
