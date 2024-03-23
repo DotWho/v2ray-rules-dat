@@ -19,6 +19,7 @@ jobs:
           echo "AD_DOMAINS_URL=https://bitbucket.org/dotwho/rule/raw/master/category/category-ads-all" >> $GITHUB_ENV
           echo "COPILOT_URL=https://bitbucket.org/dotwho/rule/raw/master/category/copilot" >> $GITHUB_ENV
           echo "APPLE_PROXY_URL=https://bitbucket.org/dotwho/rule/raw/master/category/apple-proxy" >> $GITHUB_ENV
+          echo "GAME_DOWNLOAD_URL=https://bitbucket.org/dotwho/rule/raw/master/category/game-download" >> $GITHUB_ENV
           echo "GLOBAL_PROXY=https://bitbucket.org/dotwho/rule/raw/master/category/geolocation-!cn" >> $GITHUB_ENV
         shell: bash
 
@@ -68,6 +69,7 @@ jobs:
         run: |
           curl -sSL $COPILOT_URL > ./community/data/copilot
           curl -sSL $APPLE_PROXY_URL > ./community/data/apple-proxy
+          curl -sSL $GAME_DOWNLOAD_URL > ./community/data/game-download
           echo "include:copilot" >> ./community/data/bing
 
       - name: Build geosite.dat file
